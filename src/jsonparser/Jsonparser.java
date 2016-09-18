@@ -12,6 +12,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import com.google.gson.Gson;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  *
@@ -22,6 +24,7 @@ public class Jsonparser {
     /**
      * @param args the command line arguments
      */
+   
     public class result
     {
         Account[] results;
@@ -92,7 +95,7 @@ public class Jsonparser {
             InputStreamReader reader = new InputStreamReader(url.openStream());
             result r = new Gson().fromJson(reader, result.class);
             ArrayList<String> accountsid = new ArrayList<>();
-            
+//            
             for (Account a : r.results) accountsid.add(a._id);
             
 //            {
@@ -122,5 +125,13 @@ public class Jsonparser {
         }
         
     }
-    
+//    public class CustomComparator implements Comparator<hasid>
+//    {
+//
+//        @Override
+//        public int compare(hasid o1, hasid o2) {
+//            return o1.account_id.equalsIgnoreCase(o2.account_id) ? 0 : 1;
+//        }
+//        
+//    };T;kktl
 }
